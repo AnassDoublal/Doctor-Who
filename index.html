@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Doctor Who</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" href="image/logodw.svg" />
+    <link rel='stylesheet' type='text/css' media='screen' href='reset.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+</head>
+
+<body  id="DW">
+
+    <header class="navbar">
+        <a href="#DW"><img class="logo" src="image/tardis.svg" alt="Logo Doctor Who"></a>
+        <nav class="header_nav"> 
+            <ul class="nav_list"> 
+                <li class="nav_item1"><a href="#pres" class="nav_link">Presentation</a></li>
+                <li class="nav_item2"><a href="#main" class="nav_link">Episodes</a></li> 
+            </ul> 
+        </nav>
+    </header>
+
+    <section class="info" >
+        <div class="bg" style="background-image:url(image/background.svg)">
+            <div class="divlogobg"><img src="image/logo_bg.svg" alt="Logo DW" class="logo_bg"> </div>
+            <div class="divarrow"><a href="#pres"><img class="arrow" src="image/arrow.svg" alt="Logo BBC"></a></div>
+        </div>
+        <div id="pres" class="info_text">
+            <h1>The Series</h1>
+            <p>The adventures of a Time Lord, one of a race of humanoid alien beings from the planet Galifrey. His/her name has never been revealed; he/she is known only as "The Doctor". He/she travels through time and space in a "TARDIS", which stands for "Time And Relative Dimensions In Space". It is much bigger inside than outside. In his/her travels, he encounters various monsters such as the Daleks, the Cybermen, and a renegade Time Lord known only as the Master. When the Doctor faces death, he/she cheats it by literally becoming a new person.</p>        
+        </div>
+    </section>
+
+    <section id="main">
+
+        <div class="div_saisons">
+            <div class="div_saisons_sort">
+                <button class="btn_saisons">Season {{saison}}<img src="image/chevronbas.svg" class="chevron" style="transform: scaleY(1);" alt="chevron"/></button>
+                <div class="contenu_saisons" style="display: none;">
+                    <img src="image/nine.svg" alt="Doctor Image" class="imgdoc">
+                    <template class="template_saisons">
+                        <a id="lien_saisons">Season {{saison}}</a>
+                    </template>
+                </div>
+
+                <button class="btn_sort">Sort by<img src="image/chevronbas.svg" class="chevron" alt="chevron"/></button>
+                <div class="contenu_sort" style="display: none;">
+                        <a class="sort_item">Default</a>
+                        <a class="sort_item">Rating ⭐</a>
+                </div>
+            </div>
+            <div class="nb_episodes">
+                <template class="nb_episode">
+                    <a id="lien_episode">{{nb_episodes}} épisodes</a>
+                </template>
+
+            </div>
+            <div class="div_filter">
+                <div class="filter"> <img src="image/ss.svg" alt="Sonic Screwdriver" class="ss"> Filter by rating: </div>
+                <input class="input_filter" type="text">
+                <h5>/10</h5>
+                <div> </div>
+                <input class="input_submit" type="submit" value="✔">
+            </div>
+        </div>
+        
+        <section id="eps" class="section_eps">
+                <template class="template_ep">
+                    <div class="div_ep" data-id="{{id}}">
+                        <div class="num_ep divs_ep">Episode {{numero}}</div>
+                        <img class="img_ep" src="{{image}}" alt="poster">
+                        <div class="titre_ep divs_ep">{{titre}}</div>
+                        <div class="date_ep divs_ep">{{date}}</div>
+                        <div class="note_ep divs_ep">⭐{{note}}/10</div>
+                        <div class="duree_ep divs_ep">{{duree}}</div>
+                    </div>
+                </template>
+                <template class="template_rate">
+                    <div class="div_rate div_ep" data-id="{{id}}">
+                        <div class="num_rate divs_ep">S{{saison}} E{{numero}}</div>
+                        <div class="titre_rate divs_ep">{{titre}}</div>
+                        <div class="note_rate divs_ep">⭐{{note}}/10</div>
+                    </div>
+                </template>
+        </section>
+
+        <div class="div_porte">
+            <img class="porte_gauche" src="image/porte_gauche.png" alt="porte_gauche">
+            <img class="porte_droite" src="image/porte_droite.png" alt="porte_droite">
+        </div>
+
+    </section>
+
+    <section id="details">
+        <template class="template_details">
+            <div class="div_details">
+                <div class="left_details">
+                    <div class="sais_num_details popup_details">S{{saison}} E{{numero}}: {{titre}}</div>
+                    <img class="img_details popup_details" src="{{image}}" alt="poster">
+                    <div class="langue_details popup_details">Language: {{langue}}</div>
+                    <div class="pays_details popup_details">Country: {{pays}}</div>
+                    <div class="date_details popup_details">Released: {{date}}</div>
+                </div>
+                <div class="right_details">
+                    <div class="note_details popup_details">Note IMDb:  ⭐{{note}}/10</div>
+                    <div class="genre_duree_details popup_details">{{genre}}  ⚫  {{duree}}</div>
+                    <div class="description_details popup_details">{{description}}</div>
+                    <div class="realisateur_details popup_details">Director: {{realisateur}}</div>
+                    <div class="scenaristes_details popup_details">Writer: {{scenaristes}}</div>
+                    <div class="acteurs_details popup_details">Actors: {{acteurs}}</div>
+                    <div class="available_details popup_details">Available on: <a href="https://www.primevideo.com/detail/amzn1.dv.gti.123d92a4-8b87-429a-b424-50536139342f" class="pv" target="_blank">Prime Video</a></div>
+                </div>
+                <div id="div_croix_details" class="popup_details">
+                    <div id="croix_details">✖</div>
+                </div>
+            </div>
+        </template>
+    </section>
+
+    <div id="dark_overlay"></div>
+    
+    <footer>
+        <div class="dev"><span>Dev : </span>Anass DOUBLAL / Vincent MASSÉ</div>
+        <img class="logobbc" src="image/bbc.svg" alt="Logo BBC">
+        <div class="design"><span>Design : </span>Maxence BERRIER / Léo GENDREAU</div>
+    </footer>
+
+    <script src='script.js'></script>
+</body>
+</html>

@@ -1,0 +1,637 @@
+@font-face{
+    font-family: DWfont;
+    src: url(fonts/Doctor-Who.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+:root{
+    --clr-background:#222222; 
+    --clr-orange:#E89605;
+    --clr-orange2:#D06904;
+    --clr-blue: #2a3d6d;
+    --clr-blue2:#1f2d50;
+    --clr-secondary:#FFF;
+}
+
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+    background-color: var(--clr-background);
+    color: var(--clr-secondary);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.divlogobg{
+    height: 90vh;
+    display: flex;
+}
+
+.divarrow{
+    height: 10vh;
+}
+
+header{
+    height: auto;
+    background-color: var(--clr-orange);
+    z-index: 2;
+} 
+ 
+.navbar{
+    width: 100vw;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 4;
+}
+
+.nav_list{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1em;
+}
+
+.header_nav{
+    align-content: center;
+}
+
+.logo{
+    align-self: center;
+    padding-left: 1em;
+    transition: .3s;
+    transform: scale(0.8);
+}
+
+.logo:hover{
+    transform: scale(0.9);
+    transition: .3s;
+}
+
+.nav_item1,
+.nav_item2{
+    color: white;
+    cursor: pointer;
+    padding: 1em;
+}
+
+.nav_item1:hover,
+.nav_item2:hover{
+    background-color: var(--clr-orange2);
+}
+
+.bg{
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.bg_title{
+    font-family: DWfont;
+    color: var(--clr-secondary);
+    font-size: 3rem;
+}
+
+.arrow:hover{
+    transform: translateY(-1em);
+    transition: .3s;
+}
+
+.arrow{
+    transition: .3s;
+}
+
+.info_text{
+    padding: 9vw;
+}
+
+h1{
+    color: var(--clr-orange);
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2em;
+} 
+
+p{
+
+    text-align: justify;
+    
+}
+
+.chevron{
+    padding-left: .5em;
+}
+
+.btn_saisons,
+.btn_sort{
+    background-color:var(--clr-secondary);
+    padding: 1em;
+    margin-right: 2em;
+    font-size: 1em;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 1em;
+    margin: 1em;
+}
+
+#lien_saisons{
+    cursor: pointer;
+}
+
+#lien_saisons:hover,
+.sort_item:hover{
+    background-color: var(--clr-blue2);
+}
+
+.sort_item{
+    cursor: pointer;
+}
+
+  .div_saisons_sort{
+      display: flex;
+  }
+
+  .div_saisons {
+    position: relative;
+    width: 100%;
+    background-color:var(--clr-blue2);
+    display: flex;
+    justify-content: space-between;
+}
+
+  .contenu_saisons,
+  .contenu_sort{
+    position: absolute;
+    background-color: var(--clr-blue);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    margin-top: -1em;
+    margin-left: 1em;
+  }
+
+  .contenu_saisons{
+    width: 8.35em;
+    z-index: 2;
+  }
+
+  .contenu_sort{
+    left: 10.35em;
+    width: 7.60em;
+  }
+  
+  .contenu_saisons a,
+  .contenu_sort a{
+    color: var(--clr-secondary);
+    padding: 0.75em 1em;
+    text-decoration: none;
+    display: block;
+  }
+
+.btn_saisons:hover,
+.btn_sort:hover{
+    background-color: var(--clr-orange);
+}
+
+.div_filter{
+    display: flex;
+    align-items: center;
+    margin-right: 2em;
+}
+
+.filter{
+    display: flex;
+    align-items: center;
+}   
+
+.ss{
+    width: 2em;
+    margin-right: .5em;
+}
+  
+.input_filter{
+    width: 1.5em;
+    margin-left: .5em;
+}
+
+.input_submit{
+    margin: 0 .5em;
+    background: var(--clr-blue2);
+    color: var(--clr-secondary);
+    border: none;
+}
+
+.input_submit:hover{
+    cursor: pointer;
+    color: var(--clr-orange2);
+}
+
+.chevron_filter{
+    transform: rotate(-90deg);
+}
+
+#main{
+    max-width: 100%;
+    height: auto;
+    background-color:var(--clr-blue);
+    margin: 0 9vw 5em 9vw;
+    position: relative;
+}
+
+#eps{
+    width: 100%;
+    height: auto;
+    padding: 2em 0;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+.div_porte{
+    display: flex;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+
+    overflow: hidden;
+
+}
+
+.porte_gauche,
+.porte_droite{
+    width: 50%;
+}
+
+.porte_droite{
+    transform: translateX(100%);
+    transition: .3s;
+}
+
+.porte_gauche{
+    transform: translateX(-100%);
+    transition: .3s;
+}
+
+.move_left{
+    transform: translateX(0);
+    transition: .3s;
+}
+
+.move_right{
+    transform: translateX(0);
+    transition: .3s;
+}
+
+.imgdoc{
+    height: 5vh;
+    margin-left: 2em;
+}
+
+@media (max-width: 428px){
+    #eps{
+        justify-content: center;
+    }
+}
+
+.div_ep{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 1em .5em;
+    background-color: var(--clr-background);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.div_ep:hover{
+    transform: scale(1.1);
+    transition: .3s;
+}
+
+.divs_ep{
+    padding: .25em .5em;
+}
+
+.div_rate{
+    width: 15%;
+    text-align: center;
+}
+
+
+.num_ep{
+    font-weight: bold;
+}
+
+.img_ep{
+    width: 100%;
+    height: 81%;
+}
+
+.titre_ep{
+    font-style: oblique;
+    font-weight: bold;
+    color: var(--clr-orange);
+}
+
+.duree_ep{
+    text-align: right;
+    margin-top: -1.5em;
+}
+
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+
+ul{list-style: none;}
+
+
+.logo_bg{
+    width: 70vw;
+}
+
+p{
+    font-size: 1.3em;
+    text-justify: inter-word;
+}
+
+@media (max-width: 800px) {
+    .div_saisons,
+    .div_saisons_sort,
+    .div_rate{
+        flex-direction: column;
+    }
+
+    .div_rate{width: 90%;}
+
+    .div_filter{
+        justify-content: center;
+        order: -1;
+        margin-top: 1em;
+    }
+
+    .contenu_saisons{
+        width: 84%;
+        margin-top: -5em;
+    }
+    
+    .contenu_sort{
+        left: 0;
+        min-width: 84%;
+    }
+}
+
+@media (max-width: 1280px){
+
+    .size_fix{
+        width: 60vw;
+        height: available;
+        left: 20vw;
+        top: 25%;
+        position: fixed;
+    }
+    
+    .div_details{
+        width: 80vw;
+        height: auto;
+        left: 10vw;
+        top: 1%;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--clr-background);
+        border: 1px solid black;
+        scroll-behavior: smooth;
+        z-index: 10;
+        pointer-events: all;
+        
+    }
+    .popup_details{
+        text-align: justify;
+    }
+
+    .langue_details{
+        margin: 0 1em 0 1em;
+    }
+
+    .img_details{
+        width: 73%;
+        height: auto;
+    }
+
+    .pays_details{
+        margin: 0 1em;
+    }
+
+    .date_details{
+        margin: 0 1em 1em 1em;
+    }
+
+    .genre_duree_details,
+    .description_details{
+        margin: 1em;
+    }
+
+    .note_details,
+    .sais_num_details,
+    .img_details{
+        margin: 0 1em 1em 1em;
+    }
+
+    .realisateur_details{
+        bottom: 0;
+        margin: 1em 1em 0 1em;
+    }
+
+    .scenaristes_details{
+        align-self: end;
+        margin: 0 1em 0 1em;
+    }
+
+    .acteurs_details{
+        align-self: end;
+        margin: 0 1em 1em 1em;
+    }
+
+    .available_details{
+        margin-left: 1em;
+        margin-bottom: 1em;
+    }
+
+    #croix_details{
+        margin: 1em;
+    }
+
+    #croix_details:hover{
+        color: var(--clr-orange);
+    }
+
+    #div_croix_details{
+        order: -1;
+        align-self: end;
+    }
+
+    .pv{
+        text-decoration: auto;
+        color: aqua;
+    }
+    
+}
+
+@media (min-width: 1280px){
+
+    .size_fix{
+        width: 60vw;
+        height: available;
+        left: 20vw;
+        top: 25%;
+        position: fixed;
+    }
+    
+    .div_saisons {
+        flex-direction: row;
+    }
+    
+    .div_details{
+        width: 60vw;
+        height: auto;
+        left: 20vw;
+        top: 25%;
+        position: fixed;
+        display: flex;
+        background-color: var(--clr-background);
+        border: 1px solid black;
+        scroll-behavior: smooth;
+        z-index: 10;
+        pointer-events: all;
+        
+    }
+    .popup_details{
+        text-align: justify;
+    }
+
+    .sais_num_details,
+    .img_details,
+    .langue_details{
+        margin: 2em 2em 0 2em;
+    }
+
+    .pays_details{
+        margin: 0 2em;
+    }
+
+    .date_details{
+        margin: 0 2em 2em 2em;
+    }
+
+    .note_details,
+    .genre_duree_details,
+    .description_details{
+        margin: 2em;
+    }
+
+    .realisateur_details{
+        bottom: 0;
+        margin: 2em 2em 0 2em;
+    }
+
+    .scenaristes_details{
+        align-self: end;
+        margin: 0 2em 0 2em;
+    }
+
+    .acteurs_details{
+        align-self: end;
+        margin: 0 2em 2em 2em;
+    }
+
+    .available_details{
+        margin-left: 2em;
+        margin-bottom: 1em;
+    }
+
+    #croix_details{
+        margin: 2em;
+    }
+
+    #croix_details:hover{
+        color: var(--clr-orange);
+    }
+
+    .pv{
+        text-decoration: auto;
+        color: aqua;
+    }
+
+    .pv:hover{
+        color: rgba(0, 255, 255, .8);
+    }
+
+    .div_porte{
+        height: 100%;
+    }
+
+}
+
+.overlay{
+    position: fixed;
+    z-index: 9;
+    background-color: rgba(23, 23, 23, 0.8);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    pointer-events: all;
+}
+
+.prevent_click{
+    pointer-events: none;
+}
+
+#croix_details{
+    pointer-events: all;
+    user-select: none;
+    cursor: pointer;
+}
+
+footer{
+    background-color: var(--clr-orange);
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dev{
+    margin-left: 1em;
+    user-select: none;
+}
+
+.design{
+    margin-right: 2em;
+    user-select: none;
+}
+
+.dev span, .design span{
+    font-weight: 800;
+    color: var(--clr-blue);
+}
+
+.logobbc{
+    height : 2vh;
+}
